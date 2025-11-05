@@ -1,0 +1,330 @@
+/* --- Global Styles and Colors (Perfect Match Dark Theme) --- */
+:root {
+    --bg-color: #1A1E24;     
+    --nav-bg: #14171B;       
+    --box-bg: #212831;       
+    --text-light: #E0E0E0;
+    --text-gray: #A0A0A0;
+    --highlight-color: #5D9CEC; /* Blue highlight for @ NOVA */
+    --link-color: #9C9CFF;      /* Purple/Blue link color */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid #303640; 
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.nav-right a {
+    color: var(--text-gray);
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover {
+    color: var(--text-light);
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #F7D754; 
+}
+
+/* --- Hero Section (The Welcome Block) --- */
+.hero-section {
+    text-align: center;
+    padding: 70px 20px 60px; 
+}
+
+.welcome-text {
+    font-size: 0.8em; 
+    color: var(--text-gray);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 5px; 
+}
+
+.main-title {
+    font-size: 3.5em; 
+    margin: 0;
+    font-weight: 800; 
+    color: var(--text-light);
+}
+
+.highlight {
+    color: var(--highlight-color); 
+}
+
+.tagline {
+    font-size: 1.1em; 
+    color: var(--text-gray);
+    margin-top: 15px; 
+    font-weight: 300; 
+}
+
+/* --- Main Content and Link Boxes (Homepage) --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.link-boxes {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.box {
+    flex: 1; 
+    padding: 35px;
+    border-radius: 10px;
+    background-color: var(--box-bg);
+    color: var(--text-light);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #303640; 
+}
+
+.box:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.box-header i {
+    font-size: 2.2em;
+    margin-right: 15px;
+    color: var(--highlight-color);
+}
+
+.box h2 {
+    font-size: 1.6em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.box p {
+    color: var(--text-gray);
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.link-text {
+    display: inline-block;
+    color: var(--link-color);
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.box:hover .link-text {
+    text-decoration: underline;
+}
+
+/* --- NEW STYLES FOR WRITE-UP LIST AND BLOG POST PAGES --- */
+
+/* General Content Page Styling */
+.content-page {
+    min-height: 80vh; 
+}
+
+.page-header {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3em;
+    color: var(--highlight-color);
+}
+
+/* Post List (writeups.html) Styling */
+.post-list {
+    margin-top: 20px;
+}
+
+.post-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--box-bg);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #303640;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    color: var(--text-light); 
+}
+
+.post-card:hover {
+    background-color: #282f3a; 
+    transform: translateY(-3px);
+}
+
+.post-card.placeholder {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.post-card h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: var(--text-light);
+}
+
+.post-card .summary {
+    color: var(--text-gray);
+    margin: 5px 0 10px 0;
+}
+
+.post-card .meta {
+    font-size: 0.85em;
+    color: var(--link-color);
+}
+
+.post-card i {
+    font-size: 1.5em;
+    color: var(--highlight-color);
+}
+
+/* Blog Post (clockwork-rev.html) Styling */
+.post-container {
+    max-width: 800px;
+    margin-top: 50px;
+    padding-top: 0;
+}
+
+.blog-post header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.post-meta-tag {
+    font-size: 0.9em;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.blog-post h1 {
+    font-size: 2.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-author {
+    color: var(--text-gray);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.blog-post hr {
+    border: 0;
+    height: 1px;
+    background-color: #303640;
+    margin: 20px 0;
+}
+
+.blog-post h2 {
+    color: var(--highlight-color);
+    margin-top: 35px;
+    border-bottom: 1px dashed #303640;
+    padding-bottom: 5px;
+}
+
+.blog-post h3 {
+    color: var(--text-light);
+    margin-top: 25px;
+}
+
+/* Styling for inline code snippets and blocks */
+.code-block-inline pre, .final-flag-block pre {
+    background-color: #14171B; 
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.9em;
+    border-left: 3px solid var(--link-color); 
+    color: #A9DC76; 
+}
+
+.final-flag-block pre {
+    background-color: #303640;
+    border-left: 5px solid #FF5F5F; 
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #FFFAFA;
+}
+
+/* Styling for the table inside the post */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #303640;
+    padding: 12px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #212831;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #1A1E24;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 50px 20px 40px;
+    }
+    
+    .main-title {
+        font-size: 2.5em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+    
+    .link-boxes {
+        flex-direction: column; 
+    }
+}

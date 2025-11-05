@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopper Blog - Write-ups</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">Hopper Blog</a>
+        </div>
+        <div class="nav-right">
+            <a href="notes.html">View Notes</a>
+            <span class="theme-toggle"><i class="fas fa-sun"></i></span> 
+        </div>
+    </nav>
+
+    <main class="container content-page">
+        <header class="page-header">
+            <h1>CTF Write-ups 🔒</h1>
+            <p class="tagline">Detailed solutions and walkthroughs for exploitation and vulnerability analysis challenges.</p>
+        </header>
+
+        <section class="post-list">
+            
+            <a href="guess-number-arisu.html" class="post-card">
+                <div class="card-left">
+                    <h2>Hacking with Bitwise Logic: Guess the Number Arisu!!</h2>
+                    <p class="summary">Guessing a 16-bit number in just two queries by exploiting the selective masking property of the bitwise OR operation.</p>
+                    <p class="meta">Pwn/Crypto | Published: Nov 06, 2025</p>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <a href="clockwork-rev.html" class="post-card">
+                <div class="card-left">
+                    <h2>Cracking the Custom Stream Cipher: Clockwork - rev</h2>
+                    <p class="summary">A deep dive into dynamic XOR obfuscation, revealing a two-pass decryption requirement to defeat a position-dependent bit shift cipher.</p>
+                    <p class="meta">Reverse Engineering | Published: Nov 05, 2025</p>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+    </main>
+</body>
+</html>
