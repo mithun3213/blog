@@ -1,0 +1,233 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000000; /* Pitch Black Background */
+    color: #FFFFFF; /* Pure white text for maximum contrast */
+    font-family: 'Courier New', Courier, monospace; /* Terminal/Tech font */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+header {
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 1px solid #333; /* Subtle divider */
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+/* Main Container Layout */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px; /* Centered container */
+    margin: 0 auto;
+    gap: 50px; /* Space between sidebar and content */
+}
+
+
+.sidebar {
+    flex: 1; /* Takes 1 part of the width */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.filter-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    /* Clear, visible gray for inactive filters (Contrast Fix) */
+    color: #AAAAAA; 
+    transition: color 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: #FFFFFF; /* Bright white on hover */
+}
+
+.filter-btn.active {
+    color: #00FF00; /* Matrix Green for the active tab */
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+
+.content-area {
+    flex: 3; /* Takes 3 parts of the width */
+    padding-top: 20px;
+    min-height: 400px;
+}
+
+.category-content h2 {
+    color: #00FF00;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.placeholder-text {
+    color: #555;
+    font-style: italic;
+}
+
+/* List of files/writeups */
+.file-list {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.file-list li {
+    margin-bottom: 10px;
+}
+
+.file-list a {
+    /* High contrast Cyan for unvisited links (Contrast Fix) */
+    color: #00FFFF; 
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.file-list a:hover {
+    text-decoration: underline;
+    color: #FFFFFF; /* Pure white on hover */
+}
+
+.file-list a:visited {
+    /* Visible, but distinct gray color for visited links (Contrast Fix) */
+    color: #888888; 
+}
+
+
+.writeup-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.back-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.back-link:hover { color: #fff; }
+
+/* Code Blocks */
+pre {
+    background: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    overflow-x: auto;
+    color: #00FF00;
+    margin: 15px 0;
+}
+
+code {
+    background: #222;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #FF7B00; /* Orange for inline code */
+}
+
+pre code {
+    background: transparent;
+    padding: 0;
+    color: #00FF00;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #0a0a0a;
+}
+
+table, th, td {
+    border: 1px solid #444;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    color: #ccc;
+}
+
+th {
+    background-color: #1a1a1a;
+    color: #00FF00;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        flex-direction: row;
+        justify-content: center;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+    }
+}
+
+.terminal-prompt {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    color: #00FF00; /* Bright green, matching the active tab */
+    padding: 20px 40px 0 40px; /* Space it from the edges */
+    font-weight: bold;
+    /* Optional: Add a subtle text shadow */
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.5); 
+}
+
+/* --- FOOTER STYLING --- */
+footer {
+    width: 100%;
+    /* Keep it at the bottom, even if content is short */
+    margin-top: auto; 
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #AAAAAA; /* Use the same clear gray as inactive filters */
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #00FFFF; /* Use the high-contrast Cyan color */
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF; /* White on hover */
+    text-decoration: underline;
+}
+
+/* Style for the separator | */
+.link-separator {
+    color: #333; /* Darker gray, or use #00FF00 if you want it vibrant green */
+    font-weight: bold;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mithun's Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="terminal-prompt">
+        hopper @NOVA
+    </div>
+
+    <header>
+        <h1>Hello I'm Mithun</h1>
+    </header>
+
+    <main class="container">
+        
+        <aside class="sidebar">
+            <div class="filter-btn active" onclick="filterSelection('web', this)">> Web</div>
+            <div class="filter-btn" onclick="filterSelection('rev', this)">> Rev</div>
+            <div class="filter-btn" onclick="filterSelection('notes', this)">> Notes</div>
+        </aside>
+
+        <section class="content-area">
+            
+            <div id="web" class="category-content">
+                <h2>/web</h2>
+                <ul class="file-list">
+                    <li><a href="web/atlas-cipher-chase.html">>[Writeup] Atlas Collective - Cipher Chase (CTF)</a></li>
+                    <li><a href="web/quarkdown-file-inclusion.html">>[Writeup] Quack - Platypwn </a></li>
+                </ul>
+            </div>
+
+            <div id="rev" class="category-content" style="display: none;">
+                <h2>/rev</h2>
+                <p class="placeholder-text">[Reverse Engineering files will appear here]</p>
+            </div>
+
+            <div id="notes" class="category-content" style="display: none;">
+                <h2>/notes</h2>
+                <p class="placeholder-text">[General notes will appear here]</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+    <p>&copy; 2025 Mithun's Blog | All rights reserved by Mithun.</p>
+    <div class="footer-links" style="margin-top: 10px;">
+        <a href="https://www.linkedin.com/in/mithun-sankar-s-598183328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+            target="_blank">
+            LinkedIn
+        </a>
+        <span class="link-separator">|</span>
+        <a href="mailto:mithunsankar55@gmail.com">
+            Email
+        </a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+    <script src="script.js"></script>
+</body>
+</html>
