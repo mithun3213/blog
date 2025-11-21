@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write-up: Quarkdown File Inclusion</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Specific styles for readability in write-ups */
+        .writeup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .back-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .back-link:hover { color: #fff; }
+        
+        /* Code blocks styling */
+        pre {
+            background: #111;
+            border: 1px solid #333;
+            padding: 15px;
+            overflow-x: auto;
+            color: #00ff00;
+            margin: 15px 0;
+        }
+        code {
+            background: #222;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #ff7b00; /* Orange for inline code */
+        }
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: #00ff00;
+        }
+        hr {
+            border-color: #333;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="writeup-container">
+        <a href="../index.html" class="back-link"><< Back to Home</a>
+
+        <h1 style="color: #fff; margin-bottom: 5px;"> Exploiting Quarkdown File Inclusion</h1>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">Nov 21, 2025</p>
+        <hr>
+
+        <p><h2>Description :</h2>
+        <br>
+What happens when you mix LaTeX and Markdown? Could that be secure? Is it utterly broken, cause LaTeX? Well, time to find out!</p>
+        <br>
+        <h2>The Challenge Overview</h2>
+        <p>The web page provided a text input area that allowed users to input content that was processed and rendered. The application appeared to be a mix of two powerful text processing worlds: Markdown (for simplicity) and LaTeX (for advanced formatting). This hybrid approach often introduces unexpected security boundaries.</p>
+        <br>
+        <h2>Exploitation: The .include Directive</h2>
+        <p>The key vulnerability lay in an exposed file inclusion directive inherited or implemented within the document processor, likely intended for legitimate document assembly. After investigating common vulnerabilities in document rendering systems, we attempted to use a directive to read local files. The successful payload utilized a specific command format often found in LaTeX or related tools:</p>
+
+        <pre><code>.include {/proc/self/environ}</code></pre>
+        <br>
+        <p>This command instructs the document processor to include the content of the specified file, <code>/proc/self/environ</code>. On a Linux system like the one running the server (indicated by the Kubernetes environment variables), this file contains all the **environment variables** of the running process, which is a common place for CTF flags to be stored.</p>
+        <br>
+        <h2>Result and Flag Extraction</h2>
+        <br>
+        <p>Upon submitting the <code>.include {/proc/self/environ}</code> command, the server processed the request and instead of rendering a document, it downloaded the generated file.</p>
+        <p>The contents of the downloaded file were a dump of the process's environment variables, revealing the sensitive information, including the flag:</p>
+
+        <pre><code>KUBERNETES_SERVICE_PORT=443
+KUBERNETES_PORT=tcp://10.80.0.1:443
+...
+KUBERNETES_SERVICE_HOST=10.80.0.1
+FLAG=PP{4ctu411y_n0t_4s_br0k3n_4s_1_th0ught::krkpjRn4Ql16}</code></pre>
+
+        <p>The flag was successfully extracted from the environment variable dump.</p>
+        <br>
+        <h2>Final Flag</h2>
+        <br>
+        <pre><code>PP{4ctu411y_n0t_4s_br0k3n_4s_1_th0ught::krkpjRn4Ql16}</code></pre>
+        
+        </div>
+
+</body>
+</html>
